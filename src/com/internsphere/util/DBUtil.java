@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBUtil {
-    private static final String URL = "jdbc:mysql://localhost:3306/internsphere?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-    private static final String USER = "root";
-    private static final String PASSWORD = "shabnampatil";
+private static final String URL = "jdbc:mysql://maglev.proxy.rlwy.net:24154/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+private static final String USER = "root";
+private static final String PASSWORD = "lmXDfoKnhKrOAzsNmNQvjlqdIrsgkVLp";
 
     static {
         try {
