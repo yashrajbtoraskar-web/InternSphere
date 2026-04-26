@@ -9,17 +9,18 @@ public class DBUtil {
     private static final String PASSWORD;
 
     static {
-        String envUrl = System.getenv("MYSQL_PUBLIC_URL");
-        if (envUrl != null && envUrl.startsWith("mysql://")) {
-            envUrl = envUrl.replace("mysql://", "");
-            String[] parts = envUrl.split("@");
-            String[] userPass = parts[0].split(":");
-            String hostDb = parts[1];
-            USER = userPass[0];
-            PASSWORD = userPass[1];
-            URL = "jdbc:mysql://" + hostDb + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+        String host = System.getenv("MYSQL_HOST");
+        String port = System.getenv("MYSQL_PORT");
+        String db   = System.getenv("MYSQL_DATABASE");
+        String user = System.getenv("MYSQL_USER");
+        String pass = System.getenv("MYSQL_PASSWORD");
+
+        if (host != null) {
+            URL  = "jdbc:mysql://" + host + ":" + port + "/" + db + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+            USER = user;
+            PASSWORD = pass;
         } else {
-            URL = "jdbc:mysql://localhost:3306/internsphere?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+            URL  = "jdbc:mysql://localhost:3306/internsphere?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
             USER = "root";
             PASSWORD = "shabnampatil";
         }
