@@ -1,0 +1,53 @@
+/* ============================================================
+   REPORTS PAGE STYLES
+   ============================================================ */
+.report-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+}
+.report-btn {
+    padding: 8px 18px;
+    font-size: var(--fs-label-sm);
+    font-weight: 600;
+    background: var(--surface-container);
+    color: var(--on-surface-muted);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--duration) var(--ease);
+}
+.report-btn:hover { border-color: var(--outline-variant); color: var(--on-surface); }
+.report-btn.active { background: var(--primary-container); color: #fff; border-color: var(--primary-container); }
+
+.report-content {
+    background: var(--surface-container);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+}
+.report-content h3 {
+    margin-bottom: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.report-content h3::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.report-empty {
+    text-align: center;
+    padding: var(--space-3xl);
+    color: var(--on-surface-muted);
+}
+.report-empty .empty-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+    opacity: 0.3;
+}

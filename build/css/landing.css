@@ -1,0 +1,216 @@
+/* ============================================================
+   LANDING PAGE — Blood Moon
+   ============================================================ */
+.landing-page {
+    min-height: 100vh;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ambient Glow Effects */
+.landing-page::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(185, 28, 28, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+.landing-page::after {
+    content: '';
+    position: absolute;
+    bottom: -200px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(185, 28, 28, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ---- HEADER ---- */
+.landing-header {
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-subtle);
+    position: relative;
+    z-index: 10;
+}
+.landing-brand {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.landing-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ---- MAIN LAYOUT ---- */
+.landing-main {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    min-height: calc(100vh - 130px);
+    padding: 0 48px;
+    gap: 64px;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+/* ---- HERO ---- */
+.landing-hero {
+    max-width: 640px;
+}
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(185, 28, 28, 0.1);
+    border: 1px solid rgba(185, 28, 28, 0.2);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-label-sm);
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--on-surface);
+    margin-bottom: 20px;
+}
+.hero-title span {
+    display: block;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.hero-desc {
+    font-size: var(--fs-body);
+    color: var(--on-surface-muted);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 520px;
+}
+
+/* Stats Bar */
+.hero-stats {
+    display: flex;
+    gap: 32px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border-subtle);
+}
+.hero-stat .hero-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--on-surface);
+}
+.hero-stat .hero-stat-label {
+    font-size: var(--fs-caption);
+    color: var(--on-surface-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+}
+
+/* ---- LOGIN PANEL ---- */
+.landing-login {
+    width: 100%;
+    max-width: 420px;
+}
+.login-card {
+    background: var(--surface-container);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 32px;
+    position: relative;
+}
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+/* Tabs */
+.login-tabs {
+    display: flex;
+    background: var(--surface-low);
+    border-radius: var(--radius-sm);
+    padding: 3px;
+    margin-bottom: 24px;
+}
+.login-tab {
+    flex: 1;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: var(--fs-label-sm);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--on-surface-muted);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: all var(--duration) var(--ease);
+    border: none;
+    background: none;
+}
+.login-tab.active {
+    background: var(--primary-container);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(185, 28, 28, 0.3);
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: var(--fs-label-sm);
+    color: var(--on-surface-muted);
+}
+.login-footer a { color: var(--primary); font-weight: 500; }
+
+/* ---- FOOTER ---- */
+.landing-footer {
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-subtle);
+    font-size: var(--fs-label-sm);
+    color: var(--on-surface-muted);
+    position: relative;
+    z-index: 10;
+}
+
+/* ---- ANIMATIONS ---- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(24px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.landing-hero { animation: fadeInUp 0.8s var(--ease) both; }
+.landing-login { animation: fadeInRight 0.8s var(--ease) 0.2s both; }
+
+@media (max-width: 1024px) {
+    .landing-main { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
+    .hero-title { font-size: 2.5rem; }
+    .landing-header, .landing-footer { padding: 16px 24px; }
+}
